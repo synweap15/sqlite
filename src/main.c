@@ -14,6 +14,7 @@
 ** other files are for internal use by SQLite and should not be
 ** accessed by users of the library.
 */
+#include "limits.h"
 #include "sqliteInt.h"
 
 #ifdef SQLITE_ENABLE_FTS3
@@ -2870,8 +2871,8 @@ static const int aHardLimit[] = {
 #if SQLITE_MAX_LIKE_PATTERN_LENGTH<1
 # error SQLITE_MAX_LIKE_PATTERN_LENGTH must be at least 1
 #endif
-#if SQLITE_MAX_COLUMN>32767
-# error SQLITE_MAX_COLUMN must not exceed 32767
+#if SQLITE_MAX_COLUMN>INT_MAX
+# error SQLITE_MAX_COLUMN must not exceed INT_MAX value on the system
 #endif
 #if SQLITE_MAX_TRIGGER_DEPTH<1
 # error SQLITE_MAX_TRIGGER_DEPTH must be at least 1

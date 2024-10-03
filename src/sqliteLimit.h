@@ -20,6 +20,7 @@
 ** The hard limit is the ability of a 32-bit signed integer
 ** to count the size: 2^31-1 or 2147483647.
 */
+#include "limits.h"
 #ifndef SQLITE_MAX_LENGTH
 # define SQLITE_MAX_LENGTH 1000000000
 #endif
@@ -35,14 +36,14 @@
 **    * Terms in the GROUP BY or ORDER BY clauses of a SELECT statement.
 **    * Terms in the VALUES clause of an INSERT statement
 **
-** The hard upper limit here is 32676.  Most database people will
+** The hard upper limit here is INT_MAX.  Most database people will
 ** tell you that in a well-normalized database, you usually should
 ** not have more than a dozen or so columns in any table.  And if
 ** that is the case, there is no point in having more than a few
 ** dozen values in any of the other situations described above.
 */
 #ifndef SQLITE_MAX_COLUMN
-# define SQLITE_MAX_COLUMN 2000
+# define SQLITE_MAX_COLUMN INT_MAX
 #endif
 
 /*
