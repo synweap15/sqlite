@@ -133,7 +133,7 @@
 ** as a signed 32-bit integer can hold.
 */
 #ifndef SQLITE_MAX_VARIABLE_NUMBER
-# define SQLITE_MAX_VARIABLE_NUMBER 32766
+# define SQLITE_MAX_VARIABLE_NUMBER 99999
 #endif
 
 /* Maximum page size.  The upper bound on this value is 65536.  This a limit
